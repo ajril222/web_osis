@@ -1,0 +1,431 @@
+/* CSS Variables for easy theme management */
+:root {
+    --background: #ffff;
+    --headline:#2c3e50;
+    --paragraft:#6c757d;
+    --text-hover:#357abd;
+    --card-bg:#e6f0fa;
+    --card-shadow:0 4px 8px rgba(74, 144, 226, 0, 15);
+    --card-border:#d0e3f3;
+    --button:#4a90e2;
+    --button-hover:#357abd;
+    --font-sans: 'Poppins', sans-serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--headline);
+    line-height: 1.6;
+}
+
+/* Reusable Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--background);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar.scrolled {
+    background-color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+    padding: 15px 0;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--headline);
+    text-decoration: none;
+}
+
+.logo-sekolah {
+    width: 50px;
+    max-height: auto;
+}
+.nav-links ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links ul li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--headline);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text-hover);
+}
+
+.cta-button {
+    background-color: transparent;
+    border: 2px solid var(--card-border);
+    color: var(--button);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color:var(--button-hover);
+    color: white;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--headline);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 70px; /* height of navbar */
+    left: 0;
+    width: 100%;
+    background-color: var(--background);
+    padding: 20px 0;
+    text-align: center;
+    z-index: 999;
+}
+
+.mobile-nav a {
+    color: var(--paragraft);
+    text-decoration: none;
+    padding: 15px 0;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: var(--text-hover);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('https://placehold.co/1920x1080/0A192F/ffffff?text=Foto+Siswa+Inspiratif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--paragraft);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.hero-cta {
+    background-color: var(--button);
+    color: var(--headline);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.hero-cta:hover {
+    background-color: var(--button-hover);
+    color: white;
+}
+
+/* General Section Styling */
+.section-padding {
+    padding: 100px 0;
+}
+.section-dark {
+    background-color: var(--background);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--headline);
+    margin-bottom: 10px;
+}
+.section-title p {
+    color: var(--paragraft);
+    font-size: 1rem;
+}
+
+/* Sambutan Section */
+.sambutan-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+.sambutan-wrapper.reverse {
+    flex-direction: row-reverse;
+}
+.sambutan-img {
+    flex: 1;
+}
+.sambutan-img img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+}
+.sambutan-text {
+    flex: 1.2;
+}
+.sub-heading {
+    color: var(--headline);
+    font-weight: 500;
+}
+.sambutan-text h2 {
+    font-size: 2.2rem;
+    color: var(--headline);
+    margin: 10px 0 20px 0;
+}
+.sambutan-text p {
+    margin-bottom: 20px;
+}
+.sambutan-text h4 {
+    color: var(--headline);
+    font-size: 1.1rem;
+}
+
+/* Pejabat Section */
+.pejabat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.pejabat-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.pejabat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
+}
+.pejabat-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--card-border);
+    margin-bottom: 20px;
+}
+.pejabat-card h3 {
+    color: var(--headline);
+    margin-bottom: 5px;
+}
+.pejabat-card span {
+    color: var(--headline);
+    font-size: 0.9rem;
+}
+
+/* Program Kerja Section */
+.proker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.proker-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.proker-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
+}
+.proker-card i {
+    font-size: 2.5rem;
+    color: var(--headline);
+    margin-bottom: 20px;
+}
+.proker-card h3 {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* anggota osis */
+.anggota_osis {
+    text-transform: capitalize;
+}
+/* Kegiatan Section */
+.kegiatan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 15px;
+}
+.kegiatan-item {
+    overflow: hidden;
+    border-radius: 8px;
+}
+.kegiatan-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.kegiatan-item:hover img {
+    transform: scale(1.1);
+}
+/* Spanning grid items */
+.kegiatan-item:nth-child(4) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.kegiatan-item:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Footer */
+#footer {
+    background-color: #0a192f;
+    padding: 60px 0;
+    border-top: 1px solid #303c55;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.footer-col h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+.footer-col p, .footer-col li {
+    margin-bottom: 10px;
+    color: white;
+}
+.footer-col ul {
+    list-style: none;
+}
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-col a:hover {
+    color: var(--text-hover);
+}
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--light-navy);
+    font-size: 0.9rem;
+}
+
+/* Animation on Scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links, .cta-button {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .sambutan-wrapper {
+        flex-direction: column !important;
+    }
+    .kegiatan-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+    .kegiatan-item:nth-child(4), .kegiatan-item:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
